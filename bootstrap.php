@@ -1,11 +1,14 @@
 <?php 
 
+define ("CLASS_ROOT", 'classes/');
+
 $config = require('config.php');
 
-require('classes/Connection.php');
+function __autoload($className) {
+	require_once CLASS_ROOT.str_replace('_', '/', $className).'.php';
+}
 
 $db = Connection::connect($config);
 
-require("classes/QueryBuilder.php");
-
 $query = new QueryBuilder($db);
+$user = new User($db);

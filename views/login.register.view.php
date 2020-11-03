@@ -19,17 +19,20 @@
 			<form action="login_register.php" method="POST">
 				<input type="text" name="login_email" placeholder="email" class="form-control" required><br>
 				<input type="password" name="password" placeholder="password" class="form-control" required><br><br>
-				<button class="form-control btn btn-primary" name="login-btn">Login</button>
+				<button class="form-control btn btn-primary" name="loginBtn">Login</button>
 			</form>
 		</div>
 		<div class="col-6">
 			<h4>Register</h4>
 			<form action="login_register.php" method="POST">
 				<input type="text" name="register_name" placeholder="name" class="form-control" required><br>
-				<input type="text" name="register_name" placeholder="name" class="form-control" required><br>
+				<input type="text" name="register_email" placeholder="email" class="form-control" required><br>
 				<input type="password" name="register_password" placeholder="password" class="form-control" required><br>
-				<button class="form-control btn btn-warning" name="register-btn">Register</button>
+				<button class="form-control btn btn-warning" name="registerBtn">Register</button>
 			</form>
+			<?php if ($user->register_result): ?>
+				<div class="alert alert-success">Successful Registration! Please, Log in</div>
+			<?php endif;?>
 		</div>
 	</div>
 </div>
