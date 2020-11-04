@@ -21,6 +21,13 @@
 				<input type="password" name="password" placeholder="password" class="form-control" required><br><br>
 				<button class="form-control btn btn-primary" name="loginBtn">Login</button>
 			</form>
+			<?php if ($user->loggedUser): ?>
+			<div class="alert alert-success">Log In Success 
+				<a href="index.php">Go To Blog</a>
+			</div>
+			<?php elseif(isset($_POST['loginBtn'])): ?>
+			<div class="alert alert-danger">Wrong Username and Password</div>
+			<?php endif; ?>
 		</div>
 		<div class="col-6">
 			<h4>Register</h4>

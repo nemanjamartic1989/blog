@@ -1,4 +1,5 @@
 <?php 
+session_start();
 
 define ("CLASS_ROOT", 'classes/');
 
