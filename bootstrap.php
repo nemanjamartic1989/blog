@@ -13,3 +13,4 @@ $db = Connection::connect($config);
 
 $query = new QueryBuilder($db);
 $user = new User($db);
+$post = new Post($db);
