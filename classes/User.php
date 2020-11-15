@@ -30,4 +30,13 @@ class User extends QueryBuilder
 			$this->loggedUser = $loggedUser;
 		}
 	}
+
+	public function getUserWithId($id)
+	{
+		$sql = "SELECT * FROM users WHERE id = ?";
+		$query = $this->db->prepare($sql);
+		$query->execute([$id]);
+
+		return $query->fetch(PDO::FETCH_OBJ); // Return post owner
+	}
 }
