@@ -11,6 +11,9 @@
 		<li class="nav-item">
 			<a href="logout.php" class="nav-link">Logout</a>
 		</li>
+		<li class="nav-item">
+			<a href="index.php" class="btn btn-warning"><?php echo $_SESSION['loggedUser']->name;?></a>
+		</li>
 		<?php else: ?>
 		<li class="nav-item">
 			<a href="login_register.php" class="nav-link">Login / Register</a>
@@ -31,7 +34,7 @@
 					<h3><?php echo $post->title; ?>
 						<small class="float-right">
 						<?php if ((isset($_SESSION['loggedUser'])) && $post->user_id == $_SESSION['loggedUser']->id): ?>
-							<a href="" class="btn btn-sm btn-danger">Remove</a>
+							<a href="index.php?post_id=<?php echo $post->id;?>" class="btn btn-sm btn-danger">Remove</a>
 						<?php endif;?>
 						</small>
 					</h3>

@@ -21,4 +21,11 @@ class Post extends QueryBuilder
 			$this->newPostStatus = false;
 		}
 	}
+
+	public function deletePost($id)
+	{
+		$sql = "DELETE FROM posts WHERE id = ?";
+		$query = $this->db->prepare($sql);
+		$query->execute([$id]);
+	}
 }
